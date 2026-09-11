@@ -25,6 +25,10 @@ async def no(ctx):
    await ctx.send("si")
 
 @bot.command()
+async def todo_bien?(ctx)
+ await ctx.send("bien, y tu?")
+
+@bot.command()
 async def password(ctx):
     password = gen_password()
     await ctx.send(f'La contraseña generada es: {password}')
