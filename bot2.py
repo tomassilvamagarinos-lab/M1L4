@@ -28,6 +28,13 @@ async def no(ctx):
 async def todo_bien?(ctx)
  await ctx.send("bien, y tu?")
 
+@client.tree.command()
+@app_commands.describe(member='The member you want to get the joined date from; defaults to the user who uses the command')
+async def joined(interaction: discord.Interaction, member: Optional[discord.Member] = None):
+    """Says when a member joined."""
+     member = member or interaction.user
+ await interaction.response.send_message(f'{member} joined {discord.utils.format_dt(member.joined_at)}')
+
 @bot.command()
 async def password(ctx):
     password = gen_password()
